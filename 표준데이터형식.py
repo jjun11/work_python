@@ -11,4 +11,13 @@ print(a, b, c)
 
 value = 0O20
 print(value)
-#0o : 8진수 // 0x : 16진수 // 0b : 2진수(대소문자 구분X)''
+# 0o : 8진수 // 0x : 16진수 // 0b : 2진수(대소문자 구분X)''
+
+# 불리언 타입 : 참과 거짓의 값을 가짐
+print(bool(1)) # 참
+print(bool(0)) # 거짓
+print(bool(-1000)) # 참
+print(bool("")) # 거짓
+print(bool(None)) # 거짓
+
+# 문자열 타입 :
