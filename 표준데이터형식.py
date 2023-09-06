@@ -21,3 +21,15 @@ print(bool("")) # 거짓
 print(bool(None)) # 거짓
 
 # 문자열 타입 :
+str1 = "Hello Python!!!!"
+print(str1)
+print(str1[0]) #인덱싱
+print((str1[2:5])) # 2번 인덱스에서 5번 인덱스 미만
+print(str1[2:])
+print(str1 * 3)
+print(str1 + "TEST")
+
+# 형변환 : 파이선은 값이 할당되는 순간 형이 결정됨, 이후 데이터형을 변경하고자 할 때 형변환을 사용
+print(10+int("10"))
+print("나이 : " + str(30))
+print(1+3.141592+float("4.44"))
