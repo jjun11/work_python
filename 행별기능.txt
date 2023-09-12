@@ -1,0 +1,20 @@
+import random
+#랜덤 모듈 호출
+yut=['xxxx', 'xxxo', 'xxox', 'xxoo', 'xoxx', 'xoxo', 'xoox', 'xooo', 'oxxx', 'oxxo', 'oxox', 'oxoo', 'ooxx', 'ooxo', 'ooox', 'oooo']
+# yut 리스트에 윷던지기 16(2*2*2*2)가지 경우의수 저장
+throw=random.choice(yut)
+# throw = yut 리스트에서 랜덤으로 결과 선택
+print(throw)
+# throw(랜덤 결과) 출력
+n=throw.count('o')
+# 'o'가 나온 횟수를 n변수에 저장
+if n==4: # o가 4개면
+        print("모") # "모" 출력
+elif n == 3: # o가 3개면
+        print("도") # "도" 출력
+elif n == 2: # o가 2개면
+        print("개") # "개" 출력
+elif n == 1: # o가 1개면
+        print("걸") # "걸" 출력
+elif n == 0: # o가 0개면
+        print("윷") # "윷" 출력
