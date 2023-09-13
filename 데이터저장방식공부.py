@@ -20,3 +20,7 @@ print(변수3) # (1, 2, 3, '각', '동')
 
 # 입력
 print(리스트2[3][1])
+
+num = list((int,input("수를 입력해주세요 : ").split()))
+print(num)
+
