@@ -77,3 +77,76 @@ a15 = np.random.rand(2, 3) # 2행 3열의 난수 배열 생성
 print("# a15 : ", a15)
 a16 = np.random.rand(2, 3, 4) # 2면 3행 4열의 난수 배열 생성
 print("# a16 : ", a16)
+
+#배열의 연산
+arr1 = np.array([1, 2, 3])
+print ("# arr1 : ", arr1) # [1 2 3]
+arr2 = np.array([[10, 20, 30]])
+print ("# arr2 : ", arr2) # [[10 20 30]]
+result = arr1 ** arr2
+print("# arr1 ** arr2 : ", result) # [[          1     1048576 -1010140999]]
+
+# 요소별 연산 : true, false로 연산
+arr3 = np.array([10, 20, 30, 40, 50])
+print("# arr3 > 20 : ", arr3 > 20) # [False False  True  True  True]
+
+# 통계를 위한 연산 : 배열의 합, 평균, 표준편차, 분산, 최대값, 최소값, 중앙값, 누적합, 누적곱 등의 통계에서 많이 사용되는 메소드
+arr4 = np.arange(5) # 0 ~ 5미만의 값으로 구성된 배열 생성
+print("# arr4 : ", arr4) # [0 1 2 3 4]
+print(f"합계 : {arr4.sum()}") # 10, 배열 내 모든 요소의 합
+print(f"평균 : {arr4.mean()}") # 2.0, 배열 내 모든 요소의 평균
+print(f"표준편차 : {arr4.std()}") # 1.4142135623730951, 표준편차란 평균으로부터 얼마나 떨어져 있는지를 나타내는 지표
+print(f"분산 : {arr4.var()}") # 2.0, 분산이란 편차의 제곱의 평균
+print(f"최대값 : {arr4.max()}") # 4, 배열 내 최대값
+print(f"최소값 : {arr4.min()}") # 0, 배열 내 최소값
+print(f"중앙값 : {np.median(arr4)}") # 2.0, 중앙값이란 데이터를 크기 순서대로 정렬했을 때 가장 중앙에 위치하는 값
+print(f"누적합 : {arr4.cumsum()}") # [ 0  1  3  6 10], 누적합이란 배열의 각 요소를 순서대로 더한 값
+print(f"누적곱 : {arr4.cumprod()}") # [0 0 0 0 0], 누적곱이란 배열의 각 요소를 순서대로 곱한 값
+
+# 배열 인덱싱
+arr5 = np.arange(1, 6)
+print("# arr5 : ", arr5) # [1 2 3 4 5]
+print("# arr5[0] : ", arr5[0]) # 1
+# 슬라이싱
+new_arr = arr5[1:3] # 1행에서 3행 인덱스 미만의 값을 슬라이싱
+print("# new_arr : ", new_arr) # [2 3]
+
+# Universal 함수 : 배열의 원소별 연산을 지원하는 함수, 배열의 각 요소에 대한 반복적인 계산을 빠르게 수행
+# 산술연산 : add(), subtract(), multiply(), divide(), power(), mod(), remainder(), divmod(), fmod(), abs(), fabs(), rint(), sign(), heaviside(), conj(), exp(), exp2(), log(), log2(), log10(), expm1(), log1p(), sqrt(), square(), cbrt(), reciprocal(), gcd(), lcm()
+# 삼각함수 : sin(), cos(), tan(), arcsin(), arccos(), arctan(), arctan2(), hypot(), sinh(), cosh(), tanh(), arcsinh(), arccosh(), arctanh(), deg2rad(), rad2deg(), degrees(), radians()
+# 지수와 로그 :  exp(), exp2(), log(), log2(), log10(), expm1(), log1p(), logaddexp(), logaddexp2()
+# 집계함수 : sum(), prod(), mean(), std(), var(), min(), max(), argmin(), argmax(), median(), percentile(), any(), all()
+# 논리함수 : logical_and(), logical_or(), logical_xor(), logical_not()
+# 비교함수 : greater(), greater_equal(), less(), less_equal(), not_equal(), equal()
+# 기타 : copysign(), nextafter(), spacing(), modf(), ldexp(), frexp(), fmod(), floor(), ceil(), trunc(), angle(), real(), imag(), fix(), i0(), sinc()
+
+xx = np.arange(0., 2*np.pi, 0.1)
+yy = np.sin(xx)
+print("# xx : ", xx) # 0부터 2파이(6.283185307179586...)까지 0.1씩 증가하는 배열 생성
+print("# yy : ", yy) # xx 배열의 각 요소에 대한 sin() 함수의 결과를 저장한 배열
+
+matrix1 = np.array([[1, 2], [4, 5]])
+matrix2 = np.array([[5, 6], [7, 8]])
+# 행렬 덧셈
+res = np.add(matrix1, matrix2)
+print("# res : ", res) # [[ 6  8]
+                       #  [11 13]]
+
+# 정렬과 탐색 : 배열의 정렬과 탐색을 위한 함수와 메소드
+xxx = np.array([9,8,7,2,3,4,6,11])
+print("# xxx : ", xxx) # [ 9  8  7  2  3  4  6 11]
+print(np.amin(xxx)) # 배열 내 최소값 : 2
+print(np.amax(xxx)) # 배열 내 최대값 : 11
+print(np.max(xxx)) # 배열 내 최대값 : 11
+print(np.argmin(xxx)) # 배열 내 최소값의 인덱스 : 3
+print(np.sort(xxx)) # 배열 내 요소를 오름차순 정렬 : [ 2  3  4  6  7  8  9 11]
+print(np.sort(xxx)[::-1]) # 배열 내 요소를 내림차순 정렬 : [11  9  8  7  6  4  3  2]))
+print(np.argsort(xxx)) # 배열 내 요소의 인덱스를 오름차순 정렬 : [3 4 5 6 2 1 0 7]
+
+# 브로드캐스팅 : 배열의 크기가 다른 배열끼리 연산을 수행할 수 있도록 배열의 크기를 동적으로 변환하는 기능
+ax = np.array([1, 2, 3]) # 1차원 배열
+bx = np.array([[4], [5], [6]]) # 2차원 배열 (3 * 1)로 구성된 2차원 배열
+cx = ax + bx
+print("# cx : ", cx) # [[5 6 7]
+                     #  [6 7 8]
+                     #  [7 8 9]]
